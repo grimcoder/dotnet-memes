@@ -1,78 +1,57 @@
-### **Day 1, Part 3: Azure Kubernetes Service (AKS) - Actionable Steps**
+From a design and project management perspective, creating thorough documentation ensures smooth project development, clear communication among stakeholders, and serves as a reference throughout the project lifecycle. Here's a list of essential documents:
 
-#### **Setting Up an AKS Cluster**:
+### **1. Project Initiation**
 
-1. **Azure Portal & Azure CLI Setup**:
-   
-   **Azure Portal**:
-   - Go to [Azure Portal](https://portal.azure.com/).
-   - Log in using your Azure credentials.
-   - Ensure you have the necessary permissions to create resources.
+- **Project Charter**: This document provides an overview of the project, its objectives, stakeholders, estimated budget, and timeline. It essentially serves as the project's 'North Star.'
 
-   **Azure CLI**:
-   - Download and install the Azure CLI from the [official website](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
-   - Once installed, open your terminal or command prompt.
-   - Authenticate with Azure using:
-     ```bash
-     az login
-     ```
-     Follow the prompted instructions.
+- **Stakeholder Analysis**: Identifies all parties involved in the project, their roles, responsibilities, and their influence or interest in the project.
 
-2. **Resource Groups**:
+### **2. Requirement Gathering**
 
-   **Azure Portal**:
-   - On the left sidebar, click on `Resource groups`.
-   - Click on `+ Add` to create a new resource group.
-   - Choose a suitable name and region, then click on `Review + create`.
+- **Requirement Specification**: This is a comprehensive document that details all project requirements, including functional, non-functional, technical, and user requirements.
 
-   **Azure CLI**:
-   ```bash
-   az group create --name <ResourceGroupName> --location <RegionName>
-   ```
+- **User Stories & Use Cases**: These provide a user-centric perspective of the requirements and are especially important for agile methodologies.
 
-3. **AKS Cluster Creation**:
+- **User Personas**: Detailed descriptions of the user archetypes the product will serve.
 
-   **Azure Portal**:
-   - In the Azure Portal search bar, type “Kubernetes services” and select it.
-   - Click on `+ Add`.
-   - Select your previously created resource group.
-   - Enter a unique name for the AKS cluster.
-   - Adjust the region, node size, and count as per your needs.
-   - Review other settings and adjust as necessary, then click on `Review + create`.
+### **3. Design Phase**
 
-   **Azure CLI**:
-   ```bash
-   az aks create --resource-group <ResourceGroupName> --name <ClusterName> --node-count 1 --enable-addons monitoring --generate-ssh-keys
-   ```
+- **Wireframes & Mockups**: Visual representations of the user interfaces of the application. They give stakeholders a preliminary view of the product's design.
 
-4. **Kubectl Configuration**:
+- **System Architecture Design**: A high-level overview of the software architecture, detailing components, layers, interfaces, and interactions.
 
-   **Azure CLI** (as this step typically uses CLI tools):
-   - First, install `kubectl`:
-     ```bash
-     az aks install-cli
-     ```
-   - Then, configure `kubectl` to communicate with your AKS cluster:
-     ```bash
-     az aks get-credentials --resource-group <ResourceGroupName> --name <ClusterName>
-     ```
+- **Database Design**: Describes the structure of the database, including tables, relationships, keys, and other relevant information.
 
-   **Testing your setup**:
-   - Check nodes in your AKS cluster:
-     ```bash
-     kubectl get nodes
-     ```
+### **4. Project Planning**
 
----
+- **Project Plan**: Details the tasks, milestones, timelines, resources, and dependencies. Tools like Gantt charts are often used for this.
 
-#### **Cost Management on Azure**:
+- **Risk Management Plan**: Identifies potential risks, their impact, likelihood, and strategies to manage or mitigate them.
 
-1. **Monitoring and Budgeting**:
+- **Resource Allocation**: Details on manpower, tools, and other resources and their allocation.
 
-   **Azure Portal**:
-   - Go to [Azure Cost Management and Billing](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview).
-   - Under `Cost Management`, click on `Budgets`.
-   - Click on `+ Add` to set up a new budget.
-   - Define criteria (scope, reset period, etc.), and set a budget amount.
-   - Configure alerts at certain percentages of your budget.
+### **5. Development & Testing**
 
+- **Test Plan**: This outlines the testing strategy, objectives, resources, schedule, deliverables, and release criteria.
+
+- **Code Documentation**: Comments in the code and external documentation that explain how the software works.
+
+### **6. Deployment & Maintenance**
+
+- **Deployment Plan**: Details the steps and precautions for deploying the software into production.
+
+- **Maintenance Plan**: Outlines how the product will be maintained, including potential updates, patches, and bug fixes.
+
+### **7. Closure & Evaluation**
+
+- **Project Closure Report**: A retrospective document that reviews project performance, any deviations from the initial plan, lessons learned, and formal closure sign-offs.
+
+- **User Manuals & Training Materials**: Guides and tutorials for end-users and stakeholders to understand and utilize the software effectively.
+
+### **8. Continuous Feedback & Improvement**
+
+- **Feedback Documentation**: Accumulated feedback from users and stakeholders to guide future iterations and improvements.
+
+- **Backlog**: In agile methodologies, this is a list of features, changes, and improvements planned for future sprints or versions.
+
+Remember, the specific documents you'll need can vary based on the project's size, complexity, methodology (Agile vs. Waterfall), and the organization's specific practices. However, these documents serve as a strong foundational checklist for most software projects.
